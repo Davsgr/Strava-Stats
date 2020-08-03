@@ -22,14 +22,12 @@ const addImgProfil = (linkImg) => {
 
  const updateActivitesUI = (activities) => {
      activities.forEach( activite => {
-        const html = `<li> distance: ${(activite.distance/1000).toFixed(2)} km 
-                        Sport : ${activite.type}    
-                    </li>`;
+        const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : ${activite.type}</li>`;
         lastRide.innerHTML += html;
      });
  }
 
-const updateUI = (athlete) => {
+const updateUI = (athlete, scopeEnable) => {
 
     console.log(athlete);
     console.log('Welcome on the UI', athlete.athlete.username);
@@ -42,8 +40,13 @@ const updateUI = (athlete) => {
         .then( res => console.log('Stats athlete' , res))
         .catch( err => console.log(err));
 
-    getActivities( athlete.access_token)
-        .then(activities => updateActivitesUI(activities))
-        .catch(err => console.log(err));
+    if (scopeEnable){
+        getActivities( athlete.access_token)
+            .then(activities => updateActivitesUI(activities))
+            .catch(err => console.log(err));
+        }
+    else {
+        lastRide.innerHTML = '<p>Vous devez autoriser la lecture des données de vos activités pour voir vos stats.</p>'
+    }
 }
 

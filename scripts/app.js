@@ -1,6 +1,7 @@
 // Get the authorization 
 const urlParams = new URLSearchParams(window.location.href);
 const code = urlParams.get('code');
+const scope = urlParams.get('scope');
 
 const clientId = '51577';
 const clientSecret = '55b529553cdd14a1a87344b4ad1c80ced3fb784b';
@@ -25,7 +26,10 @@ if(code){
     getData()
         .then(athlete => { 
             console.log('Your are logged In', athlete.athlete.username);
-            updateUI(athlete);
+            console.log('scope: ', scope);
+            const scopeEnable = scope.includes('activity:read');
+            console.log(scopeEnable);
+            updateUI(athlete, scopeEnable);
         })
         .catch( err => console.log(err));
 }
