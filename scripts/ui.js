@@ -22,8 +22,20 @@ const addImgProfil = (linkImg) => {
 
  const updateActivitesUI = (activities) => {
      activities.forEach( activite => {
-        const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : ${activite.type}</li>`;
-        lastRide.innerHTML += html;
+        if (activite.type === 'Run'){
+            const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-running"></i></li>`;
+            lastRide.innerHTML += html;
+        } else if (activite.type === 'Swim'){
+            const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-swimmer"></i></li>`;
+            lastRide.innerHTML += html;
+        } else if (activite.type === 'Bike'){
+            const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-biking"></i></li>`;
+            lastRide.innerHTML += html;
+        } else {
+            const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-biking"></i></li>`;
+            lastRide.innerHTML += html;
+        }
+        
      });
  }
 
