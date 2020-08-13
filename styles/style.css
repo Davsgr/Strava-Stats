@@ -1,13 +1,84 @@
 *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
+button{
+    position: relative;
+    left: 70%;
+    width: 120px;
+    height: 27px;
+    background-color: white;
+    border: 1px solid #DFDFDF;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #DFDFDF;
+}
+
+.header{
+    /* position: relative; */
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 .header img{
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     height: 130px;
+    margin: 10px 0;
+}
+
+
+
+.stats{
+    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: solid 1px #DFDFDF;
+}
+
+.stats h2{
+    margin-bottom: 20px;
+}
+
+.last-activities, .total{
+    margin: 50px auto;
+}
+
+.total{
+    padding-left: 100px;
+    border-left: solid 1px #DFDFDF;
+}
+
+.total li{
+    margin: 40px 0;
+}
+
+.bar{
+    display: inline-block;
+    height: 10px;
+    width: 200px;
+}
+
+.run{
+    background-color: #ADFF90;
+}
+
+.swim{
+    background-color: #77BEFF;
+}
+
+.bike{
+    background-color: #FF9D9D;
 }
 

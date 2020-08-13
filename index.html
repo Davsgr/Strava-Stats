@@ -2,25 +2,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
     <script src="https://kit.fontawesome.com/4592bc8a33.js" crossorigin="anonymous"></script>
     <title>Strava API</title>
 </head>
 <body>
+    <button class="loggin">login Strava</button>
+    <button class="loggout">logout Strava</button>
+
     <div class="header">
-        <button class="loggin">login Strava</button>
-        <button class="loggout">logout Strava</button>
         <div class="title">
             <h1>Welcome on Strava Stats</h1>
         </div>
-        <!-- img profile -->
     </div>
 
     <div class="stats">
-        <div class="stats-title"></div>
-        <!-- <h2>Stats des 10 dernières sorties</h2> -->
-        <ul class="last-ride"></ul>
+        <div class="last-activities">
+            <div class="stats-title">
+                <h2>Last 10 activities</h2>
+            </div>
+            <ul class="last-ride"></ul>
+        </div>
+        
+        <div class="total">
+            <div class="stats-total-title">
+                <h2>Last 10 activities total</h2>
+            </div>
+            <ul class="last-ride">
+                <li>
+                    <i class="fas fa-running"></i>
+                    <div class="run bar"></div>
+                </li>
+                <li>
+                    <i class="fas fa-swimmer"></i>
+                    <div class="swim bar"></div>
+                </li>
+                <li>
+                    <i class="fas fa-biking"></i>
+                    <div class="bike bar"></div>
+                </li>
+            </ul>
+        </div>
     </div>
+
     <script src="/scripts/ui.js"></script>
     <script src="/scripts/app.js"></script>
 </body>

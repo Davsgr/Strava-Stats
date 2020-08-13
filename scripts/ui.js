@@ -1,6 +1,8 @@
 const loggin = document.querySelector('.loggin');
 const loggout = document.querySelector('.loggout');
 loggout.style.display = 'none';
+const stats = document.querySelector('.stats');
+stats.style.display='none';
 const title = document.querySelector('.title');
 const header = document.querySelector('.header');
 const statsTitle = document.querySelector('.stats-title');
@@ -23,6 +25,7 @@ const addImgProfil = (linkImg) => {
 
  const updateActivitesUI = (activities) => {
      console.log(activities);
+     stats.style.display='flex';
      activities.forEach( activite => {
         if (activite.type === 'Run'){
             const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-running"></i></li>`;
@@ -50,9 +53,6 @@ const updateUI = (athlete, scopeEnable) => {
     loggout.style.display = 'block';
     title.innerHTML = `<h1>${athlete.athlete.firstname} ${athlete.athlete.lastname}</h1>
                         <h2>${athlete.athlete.country}</h2>`;
-
-    const titleActivities = `<h2>Last 10 activities</h2>`;
-    statsTitle.innerHTML = titleActivities;
 
     getAthleteStats(athlete.athlete.id, athlete.access_token)
         .then( res => console.log('Stats athlete' , res))
