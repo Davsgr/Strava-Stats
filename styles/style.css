@@ -1,5 +1,7 @@
 *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -7,24 +9,5 @@
     border-radius: 50%;
     border: 1px solid rgb(0, 0, 0);
     height: 130px;
-}
-
-h1{
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-}
-
-button{
-    width: 120px;
-    margin: 10px;
-}
-
-.stats{
-    letter-spacing: 1.5px;
-}
-
-.stats i {
-    padding: 0 10px;
 }
 

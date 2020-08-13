@@ -3,6 +3,7 @@ const loggout = document.querySelector('.loggout');
 loggout.style.display = 'none';
 const title = document.querySelector('.title');
 const header = document.querySelector('.header');
+const statsTitle = document.querySelector('.stats-title');
 const lastRide = document.querySelector('.last-ride');
 
 loggin.addEventListener('click', () =>{
@@ -16,11 +17,12 @@ loggout.addEventListener('click', () =>{
 const addImgProfil = (linkImg) => {
     const img = document.createElement('img');
     img.src= linkImg;
-    header.appendChild(img);
+    header.insertBefore(img,title);
     console.log(img);
  }
 
  const updateActivitesUI = (activities) => {
+     console.log(activities);
      activities.forEach( activite => {
         if (activite.type === 'Run'){
             const html = `<li>distance: ${(activite.distance/1000).toFixed(2)} km Sport : <i class="fas fa-running"></i></li>`;
@@ -46,7 +48,11 @@ const updateUI = (athlete, scopeEnable) => {
     addImgProfil(athlete.athlete.profile);
     loggin.style.display = 'none';
     loggout.style.display = 'block';
-    title.innerHTML = `${athlete.athlete.firstname} ${athlete.athlete.lastname}`;
+    title.innerHTML = `<h1>${athlete.athlete.firstname} ${athlete.athlete.lastname}</h1>
+                        <h2>${athlete.athlete.country}</h2>`;
+
+    const titleActivities = `<h2>Last 10 activities</h2>`;
+    statsTitle.innerHTML = titleActivities;
 
     getAthleteStats(athlete.athlete.id, athlete.access_token)
         .then( res => console.log('Stats athlete' , res))
