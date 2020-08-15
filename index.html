@@ -17,6 +17,8 @@
         </div>
     </div>
 
+    <div class="error"></div>
+
     <div class="stats">
         <div class="last-activities">
             <div class="stats-title">
@@ -24,28 +26,39 @@
             </div>
             <ul class="last-ride"></ul>
         </div>
-        
+
         <div class="total">
             <div class="stats-total-title">
                 <h2>Last 10 activities total</h2>
             </div>
-            <ul class="last-ride">
+            <ul class="last-ride-total">
                 <li>
                     <i class="fas fa-running"></i>
                     <div class="run bar"></div>
+                    <p class="total-run">0</p>
                 </li>
                 <li>
                     <i class="fas fa-swimmer"></i>
                     <div class="swim bar"></div>
+                    <p class="total-swim">0</p>
                 </li>
                 <li>
                     <i class="fas fa-biking"></i>
                     <div class="bike bar"></div>
+                    <p class="total-bike">0</p>
                 </li>
             </ul>
         </div>
     </div>
 
+    <footer>
+        <p>David Graf 2020 powered by Strava API</p>
+    </footer>
+
+
+    <!-- Date FNS to put the date more lisible -->
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    
     <script src="/scripts/ui.js"></script>
     <script src="/scripts/app.js"></script>
 </body>

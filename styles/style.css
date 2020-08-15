@@ -52,7 +52,14 @@ button:hover{
 }
 
 .last-activities, .total{
-    margin: 50px auto;
+    margin: 10px auto;
+    
+}
+
+.dist{
+    display: inline-block;
+    font-weight: bolder;
+    width: 80px;
 }
 
 .total{
@@ -64,10 +71,16 @@ button:hover{
     margin: 40px 0;
 }
 
+.total i{
+    width: 30px;
+}
+
+
+
 .bar{
     display: inline-block;
     height: 10px;
-    width: 200px;
+    border-radius: 10px;
 }
 
 .run{
@@ -82,3 +95,31 @@ button:hover{
     background-color: #FF9D9D;
 }
 
+.error{
+    text-align: center;
+    color: crimson;
+    font-weight: bolder;
+    margin: 50px;
+}
+
+footer{
+    /* position: fixed;
+    left: 0;
+    bottom: 10px;
+    width: 100%; */
+    flex-shrink: 0;
+    text-align: center;
+}
+
+@media (max-width: 550px){
+
+    .total{
+        padding-left: 0;
+        border-left: none;
+    }
+
+    button{
+        left: 50%;
+    }
+
+}
