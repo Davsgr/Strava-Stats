@@ -3,8 +3,8 @@ const urlParams = new URLSearchParams(window.location.href);
 const code = urlParams.get('code');
 const scope = urlParams.get('scope');
 
-const clientId = '51577';
-const clientSecret = '55b529553cdd14a1a87344b4ad1c80ced3fb784b';
+const clientId = '';
+const clientSecret = '';
 const getToken = 'https://www.strava.com/api/v3/oauth/token';
 
 const urlAPI = 'https://www.strava.com/api/v3/'
